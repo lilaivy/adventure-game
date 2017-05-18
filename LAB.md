@@ -1,7 +1,7 @@
 <img src="https://cloud.githubusercontent.com/assets/478864/22186847/68223ce6-e0b1-11e6-8a62-0e3edc96725e.png" width=30> Adventure Game
 ===
 
-Create a componet based adventure game! For this assignment you'll be creating a 
+Create a component based adventure game! For this assignment you'll be creating a 
 an adventure game ala Zork or choose your own adventure, or whatever you dream up.
 
 **Work in teams of 2 for this project**
