@@ -13,12 +13,12 @@ the player defeats or interacts with.
 
 * You need to provide ways for user to specify what they want to do (button, input, etc) 
 
-* No need to try and persist the data (though you can put on localStorage if you want)
+* If it makes sense, persist the data in localStorage to survive a browser refresh
 
 * You haven't yet learned how to use things like a router or some of the higher level state management
 techniques available in React. Just use what you know plus JavaScript know-how to orchestrate changes through the game.
 
-* The goal is to jump into React and try and build something more complex than first assignment.
+* The goal is to jump into React and try and build something more complex!
 
 ## Bonus
 * Test your components with snapshot testing
