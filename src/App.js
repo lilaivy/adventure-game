@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import scene from './scenes/landingpage';
+import landingScene from './scenes/landing-scene';
+import expositionScene from './scenes/exposition-scene';
 
 class App extends Component {
 
@@ -7,24 +8,46 @@ class App extends Component {
     super();
 
     this.state = {
-      backgroundURL: scene.backgroundUrl,
-      backgroundSize: '100%',
+      backgroundURL: landingScene.backgroundUrl,
+      headerText: landingScene.headerText,
+      bodyText: landingScene.bodyText,
+      userName: '',
+      scene: landingScene
     };
   }
 
+  setName(userName) {
+    this.setState({ userName });
+  }
+
+  goToScene(scene) {
+    this.setState({ scene });
+    this.setState({ backgroundURL: scene.backgroundUrl });
+    this.setState({ headerText: scene.headerText });
+    this.setState({ bodyText: scene.bodyText });
+  }
+
+
   render() {
+    const { headerText, backgroundURL, bodyText, userName, scene } = this.state;
     return (
       <div className="main" style={{
-        background: `url(${this.state.backgroundURL}) no-repeat center center`
+        background: `url(${backgroundURL}) no-repeat center center`
       }}>
         <div className="Scene-header">
-          <h2>Welcome to Tea Quest</h2>
+          <h2>{headerText}</h2>
         </div>
-        <p className="App-intro">
-          To start your adventure, please enter your name into the box below.
-        </p>
-        <p><button type="submit">Start Game</button></p>
-      </div>
+        <p> {bodyText} {userName} </p>
+        <form onSubmit={e => {
+          e.preventDefault();
+          this.setName(e.target.elements.nameinput.value);
+          this.goToScene(scene.nextScene);
+        }}>
+          <label>Name <input name="nameinput"></input></label>
+          <p><button type="submit">Start Game</button></p>
+        </form>
+
+      </div >
     );
   }
 }
