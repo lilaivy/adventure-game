@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import scene from './scene';
+import scene from './scenes/landingpage';
 
 class App extends Component {
 

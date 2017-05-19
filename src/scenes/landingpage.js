@@ -1,4 +1,4 @@
-import landingpage from './img/landingpage.jpg';
+import landingpage from '../img/landingpage.jpg';
 
 export default {
   backgroundUrl: landingpage,
