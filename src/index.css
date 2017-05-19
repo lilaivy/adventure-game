@@ -1,4 +1,9 @@
 body {
-  background: url('./img/landingpage.jpg') no-repeat center center fixed;
+  /*background: url('./img/landingpage.jpg') no-repeat center center fixed;
+  background-size: 100%;*/
+}
+
+.main {
+  height: 800px;
   background-size: 100%;
 }

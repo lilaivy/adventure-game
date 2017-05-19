@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import scene from './scene';
 
 class App extends Component {
 
@@ -6,23 +7,21 @@ class App extends Component {
     super();
 
     this.state = {
-      backgroundURL: ['./img/landingpage.jpg', './img/cave.jpg', './img/staircase.jpg'],
+      backgroundURL: scene.backgroundUrl,
       backgroundSize: '100%',
-      css: {
-        background: 'url(' + this.state.backgroundURL + ') no-repeat center center',
-        backgroundSize: this.state.backgroundSize
-      }
     };
   }
 
   render() {
     return (
-      <div className="landingpage">
+      <div className="main" style={{
+        background: `url(${this.state.backgroundURL}) no-repeat center center`
+      }}>
         <div className="Scene-header">
-          <h2>Welcome to React</h2>
+          <h2>Welcome to Tea Quest</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          To start your adventure, please enter your name into the box below.
         </p>
         <p><button type="submit">Start Game</button></p>
       </div>
