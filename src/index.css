@@ -3,7 +3,19 @@ body {
   background-size: 100%;*/
 }
 
+
+
+h2 {
+  margin: 0;
+}
+
+.wrapper {
+  margin-top: 20%;
+  margin: 20% 
+}
+
 .main {
+  padding: 30px;
   height: 800px;
-  background-size: 100%;
+  background-size: cover;
 }

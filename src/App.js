@@ -32,21 +32,22 @@ class App extends Component {
     const { headerText, backgroundURL, bodyText, userName, scene } = this.state;
     return (
       <div className="main" style={{
-        background: `url(${backgroundURL}) no-repeat center center`
+        backgroundImage: `url(${backgroundURL})`
       }}>
-        <div className="Scene-header">
-          <h2>{headerText}</h2>
+        <div className="wrapper">
+          <div className="Scene-header">
+            <h2>{headerText}</h2>
+          </div>
+          <p> {bodyText} {userName} </p>
+          <form onSubmit={e => {
+            e.preventDefault();
+            this.setName(e.target.elements.nameinput.value);
+            this.goToScene(scene.nextScene);
+          }}>
+            <label>Name <input name="nameinput"></input></label>
+            <p><button type="submit">Start Game</button></p>
+          </form>
         </div>
-        <p> {bodyText} {userName} </p>
-        <form onSubmit={e => {
-          e.preventDefault();
-          this.setName(e.target.elements.nameinput.value);
-          this.goToScene(scene.nextScene);
-        }}>
-          <label>Name <input name="nameinput"></input></label>
-          <p><button type="submit">Start Game</button></p>
-        </form>
-
       </div >
     );
   }
