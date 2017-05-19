@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import UserSignin from './UserSignin'
 
 class App extends Component {
   constructor() {
@@ -7,6 +8,8 @@ class App extends Component {
     this.state = {
       name: '',
     }
+
+    this.changeName=this.changeName.bind(this);
 
   }
 
@@ -17,42 +20,21 @@ class App extends Component {
 
 
 
+
   render() {
     const { name } = this.state;
-    const comma = ',';
+
 
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome To Hawaii Adventure</h2>
-        </div>
-        <p className="App-intro">
-          To get started, enter your name:
-        </p>
-        <form onSubmit={event => {
-          event.preventDefault();
-          this.changeName(event.target.elements.signin.value);
-        }}
-          className="intro-form" >
-          <input style={{
-            fontSize: '15px',
-            borderRadius: '5px',
-            backgroundColor: 'white'
-          }}
-            name="signin"
-            type="text"
-            placeholder="Enter Name" />
-          <input
-            style={{
-              fontSize: '15px',
-              borderRadius: '5px',
-              backgroundColor: 'white'
-            }}
-            type="submit"
-            name="submit"
-          />
-        </form>
+      <div>
+        <UserSignin
+          name={name}
+          changeName={this.changeName}
+
+        />
+
       </div>
+
     );
   }
 }
