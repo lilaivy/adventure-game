@@ -1,5 +1,4 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  background: url('./img/landingpage.jpg') no-repeat center center fixed;
+  background-size: 100%;
 }
