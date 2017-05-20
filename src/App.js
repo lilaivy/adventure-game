@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import landingScene from './scenes/landing-scene';
-import expositionScene from './scenes/exposition-scene';
+import landingScene from './scenes/01-landing';
+import expositionScene from './scenes/02-exposition';
 
 class App extends Component {
 
