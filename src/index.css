@@ -20,3 +20,7 @@ h2 {
   height: 800px;
   background-size: cover;
 }
+
+.user-block {
+  border: 1px dotted yellow;
+}
