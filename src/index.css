@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans');
+
 body {
-  /*background: url('./img/landingpage.jpg') no-repeat center center fixed;
-  background-size: 100%;*/
+  text-align: left;
+  font-family: 'Open Sans';
 }
-
-
 
 h2 {
   margin: 0;
+  font-family: 'Fjalla One';
 }
 
 .wrapper {
