@@ -35,12 +35,13 @@ class App extends Component {
       <div className="main" style={{
         backgroundImage: `url(${backgroundURL})`
       }}>
+        <User userName={userName} />
         <div className="wrapper">
           <div className="Scene-header">
             <h2>{headerText}</h2>
           </div>
           <p> {bodyText} </p>
-          <form classname="toggle" onSubmit={e => {
+          <form onSubmit={e => {
             e.preventDefault();
             this.setName(e.target.elements.nameinput.value);
             this.goToScene(scene.nextScene);
@@ -48,7 +49,10 @@ class App extends Component {
             <label>Name <input name="nameinput"></input></label>
             <p><button type="submit">{buttonText}</button></p>
           </form>
-          <User userName = { this.userName }/>
+          <p><button onClick={e => {
+            e.preventDefault();
+            this.goToScene(scene.previousScene);
+          }}>{buttonText}</button></p>
         </div>
       </div >
     );

@@ -11,8 +11,7 @@ h2 {
 }
 
 .wrapper {
-  margin-top: 20%;
-  margin: 20% 
+  margin: 10%; 
 }
 
 .main {
@@ -22,5 +21,6 @@ h2 {
 }
 
 .user-block {
-  border: 1px dotted yellow;
+  color: whitesmoke;
+  background-color: rgba(50, 50, 50 50);
 }
