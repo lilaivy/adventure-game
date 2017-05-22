@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import landingScene from './scenes/01-landing';
 import User from './User';
+import Items from './Items';
 
 class App extends Component {
 
@@ -41,7 +42,7 @@ class App extends Component {
             <h2>{headerText}</h2>
           </div>
           <p> {bodyText} </p>
-          <form onSubmit={e => {
+          <form className = "toggle" onSubmit = {e => {
             e.preventDefault();
             this.setName(e.target.elements.nameinput.value);
             this.goToScene(scene.nextScene);
@@ -49,7 +50,7 @@ class App extends Component {
             <label>Name <input name="nameinput"></input></label>
             <p><button type="submit">{buttonText}</button></p>
           </form>
-          <p><button onClick={e => {
+          <p><button onClick = {e => {
             e.preventDefault();
             this.goToScene(scene.previousScene);
           }}>{buttonText}</button></p>

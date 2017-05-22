@@ -25,3 +25,7 @@ h2 {
   color: whitesmoke;
   background-color: rgba(50, 50, 50 50);
 }
+
+.toggle {
+  display: none;
+}
