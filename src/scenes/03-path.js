@@ -1,6 +1,4 @@
 import pathImg from '../img/path.jpg';
-import staircaseScene from './04-staircase';
-import fieldScene from './06-field';
 
 export default {
   backgroundUrl: pathImg,

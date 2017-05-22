@@ -1,5 +1,4 @@
 import landingPageImg from '../img/landingpage.jpg';
-import expositionScene from './02-exposition';
 
 export default {
   backgroundUrl: landingPageImg,

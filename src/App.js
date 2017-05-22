@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import landingScene from './scenes/01-landing'; //might need to change this because of scene module
+// import landingScene from './scenes/01-landing'; //might need to change this because of scene module
+import landingScene from './scenes';
 import User from './User';
-import Button from './ActionButton';
-import Form from './EnterUserName';
+import ActionButton from './ActionButton';
+import EnterUserName from './EnterUserName';
+
 //import scenes but what do we do with them?
 
 class App extends Component {
@@ -11,7 +13,7 @@ class App extends Component {
 
     this.state = {
       userName: '',
-      scene: landingScene
+      currentScene: landingScene
     };
 
     this.setName = this.setName.bind(this);
@@ -23,27 +25,26 @@ class App extends Component {
   }
 
   goToScene(scene) {
-    this.setState({ scene });
-    console.log(scene);
+    this.setState({ currentScene: scene });
   }
 
   render() {
-    const { userName, scene } = this.state;
-    const { headerText, backgroundUrl, bodyText, buttonText } = scene;
+    const { userName, currentScene } = this.state;
+    const { headerText, backgroundUrl, bodyText, buttonText } = currentScene;
     const form = 
-    <Form
-      scene={scene}
+    <EnterUserName
+      currentScene={currentScene}
       setName={this.setName}
       goToScene={this.goToScene}
     />;
     const button = 
-    <Button
-      scene={scene}
+    <ActionButton
+      currentScene={currentScene}
       buttonText={buttonText}
       goToScene={this.goToScene}
-      callback={scene.callback}
+      callback={currentScene.callback}
     />;
-    const sceneAction = scene === landingScene ? form : button;
+    const sceneAction = currentScene === landingScene ? form : button;
 
     return (
       <div className="main" style={{

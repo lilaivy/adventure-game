@@ -1,6 +1,4 @@
 import caveImg from '../img/cave.jpg';
-import pathScene from './03-path';
-import treeScene from './07-tree';
 
 export default {
   backgroundUrl: caveImg,

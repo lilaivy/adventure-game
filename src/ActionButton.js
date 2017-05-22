@@ -5,13 +5,13 @@ export default function ActionButton(props) {
   return (
     <div>
       <button onClick={() => {
-        callback(props.scene.nextScene);
+        callback(props.currentScene.nextScene);
       }}>
         {props.buttonText}
       </button>
 
       <button onClick={() => {
-        props.goToScene(props.scene.prevScene);
+        props.goToScene(props.currentScene.prevScene);
       }}>
         Go back
       </button>

@@ -1,5 +1,4 @@
 import caveImg from '../img/cave.jpg';
-import staircaseScene from './04-staircase';
 
 function foundTea() {
   alert('You found a Taiwanese Oolong!');
