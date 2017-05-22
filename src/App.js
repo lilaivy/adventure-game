@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import landingScene from './scenes/01-landing';
 import User from './User';
-import Items from './Items';
 
 class App extends Component {
-
   constructor() {
     super();
 
@@ -24,6 +22,7 @@ class App extends Component {
 
   goToScene(scene) {
     this.setState({ scene });
+    console.log(scene);
     this.setState({ backgroundURL: scene.backgroundUrl });
     this.setState({ headerText: scene.headerText });
     this.setState({ bodyText: scene.bodyText });
@@ -42,18 +41,18 @@ class App extends Component {
             <h2>{headerText}</h2>
           </div>
           <p> {bodyText} </p>
-          <form className = "toggle" onSubmit = {e => {
+          <form onSubmit = {e => {
             e.preventDefault();
             this.setName(e.target.elements.nameinput.value);
             this.goToScene(scene.nextScene);
           }}>
-            <label>What's Your Name? <input name="nameinput"></input></label>
+            <label>What's Your Name? <input name = "nameinput"></input></label>
             <p><button type="submit">{buttonText}</button></p>
           </form>
-          {/*<p><button onClick = {e => {
+          <p><button onClick = {e => {
             e.preventDefault();
             this.goToScene(scene.previousScene);
-          }}>{buttonText}</button></p>*/}
+          }}>{buttonText}</button></p>
         </div>
       </div >
     );

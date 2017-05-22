@@ -1,5 +1,5 @@
 import landingImg from '../img/landingpage.jpg';
-import staircaseScene from './03-path';
+import staircaseScene from './04-staircase';
 import fieldScene from './06-field';
 
 export default {
