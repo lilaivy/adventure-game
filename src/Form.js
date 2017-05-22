@@ -14,7 +14,7 @@ class Form extends Component {
   }
 
   render() {
-    const { scene } = this.state;
+    const { buttonText, scene } = this.props.state;
     return (
       <div>
         <form className="toggle" onSubmit={e => {
@@ -22,7 +22,7 @@ class Form extends Component {
           this.setName(e.target.props.elements.nameinput.value);
           this.goToScene(scene.nextScene);
         }}>
-          <label>Name <input name="nameinput"></input></label>
+          <label>What's Your Name: <input name="nameinput"></input></label>
           <p><button type="submit">{buttonText}</button></p>
         </form>
       </div >

@@ -47,13 +47,13 @@ class App extends Component {
             this.setName(e.target.elements.nameinput.value);
             this.goToScene(scene.nextScene);
           }}>
-            <label>Name <input name="nameinput"></input></label>
+            <label>What's Your Name? <input name="nameinput"></input></label>
             <p><button type="submit">{buttonText}</button></p>
           </form>
-          <p><button onClick = {e => {
+          {/*<p><button onClick = {e => {
             e.preventDefault();
             this.goToScene(scene.previousScene);
-          }}>{buttonText}</button></p>
+          }}>{buttonText}</button></p>*/}
         </div>
       </div >
     );
