@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
+import Image from './images/welcome.jpg';
 
 
 function UserSignin(props) {
     return (
-        <div className="App-header">
-            <h2>Welcome To Hawaii Adventure {props.name}</h2>
-        <p className="App-intro">
+        <div className="welcome">
+            <h2>Welcome To Hawaii Your Adventure {props.name}</h2>
+        <p className="get-started">
             To get started, enter your name:
         </p>
         <form onSubmit={event => {
@@ -32,6 +33,11 @@ function UserSignin(props) {
                 name="submit"
             />
         </form>
+        {/*<div className="welcomeImageContainer"
+        style={{
+            backgroundImage:`url(${Image})`,
+            backgroundSize: 'cover',}}>
+        </div>*/}
       </div >
     );
 }

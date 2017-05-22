@@ -7,6 +7,7 @@ class App extends Component {
     super();
     this.state = {
       name: '',
+      backgroundImage: userSignin.backgroundUrl,
     }
 
     this.changeName=this.changeName.bind(this);
@@ -22,7 +23,7 @@ class App extends Component {
 
 
   render() {
-    const { name } = this.state;
+    const { name, backgroundImage } = this.state;
 
 
     return (
