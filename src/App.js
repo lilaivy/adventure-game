@@ -19,6 +19,7 @@ class App extends Component {
 
     this.setName = this.setName.bind(this);
     this.goToScene = this.goToScene.bind(this);
+    this.goBack = this.goBack.bind(this);
   }
 
   setName(userName) {
@@ -34,9 +35,9 @@ class App extends Component {
     this.setState({ buttonText: scene.buttonText });
   }
 
-  // goBack(scene) {
-  //   this.setState({ scene });
-  // }
+  goBack(scene) {
+    this.setState({ scene: scene.prevScene });
+  }
 
   render() {
     const { headerText, backgroundURL, bodyText, buttonText, userName, scene } = this.state;
@@ -62,6 +63,7 @@ class App extends Component {
               scene={scene}
               buttonText={buttonText}
               goToScene={this.goToScene}
+              goBack={this.goBack}
               callback={scene.callback}
             />
           }
