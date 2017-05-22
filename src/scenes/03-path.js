@@ -1,9 +1,9 @@
-import landingImg from '../img/landingpage.jpg';
+import pathImg from '../img/path.jpg';
 import staircaseScene from './04-staircase';
 import fieldScene from './06-field';
 
 export default {
-  backgroundUrl: landingImg,
+  backgroundUrl: pathImg,
   prevScene: fieldScene,
   nextScene: staircaseScene,
   headerText: 'Meadow Path',

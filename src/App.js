@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import landingScene from './scenes/01-landing';
 import User from './User';
+import Button from './Button';
+import Form from './Form';
 
 class App extends Component {
   constructor() {
@@ -14,6 +16,9 @@ class App extends Component {
       userName: '',
       scene: landingScene
     };
+
+    this.setName = this.setName.bind(this);
+    this.goToScene = this.goToScene.bind(this);
   }
 
   setName(userName) {
@@ -29,6 +34,10 @@ class App extends Component {
     this.setState({ buttonText: scene.buttonText });
   }
 
+  // goBack(scene) {
+  //   this.setState({ scene });
+  // }
+
   render() {
     const { headerText, backgroundURL, bodyText, buttonText, userName, scene } = this.state;
     return (
@@ -41,20 +50,23 @@ class App extends Component {
             <h2>{headerText}</h2>
           </div>
           <p> {bodyText} </p>
-          <form onSubmit = {e => {
-            e.preventDefault();
-            this.setName(e.target.elements.nameinput.value);
-            this.goToScene(scene.nextScene);
-          }}>
-            <label>What's Your Name? <input name = "nameinput"></input></label>
-            <p><button type="submit">{buttonText}</button></p>
-          </form>
-          <p><button onClick = {e => {
-            e.preventDefault();
-            this.goToScene(scene.previousScene);
-          }}>{buttonText}</button></p>
+          {scene === landingScene &&
+            <Form
+              scene={scene}
+              setName={this.setName}
+              goToScene={this.goToScene}
+            />
+          }
+          {scene !== landingScene &&
+            <Button
+              scene={scene}
+              buttonText={buttonText}
+              goToScene={this.goToScene}
+              callback={scene.callback}
+            />
+          }
         </div>
-      </div >
+      </div>
     );
   }
 }

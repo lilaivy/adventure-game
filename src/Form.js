@@ -9,22 +9,16 @@ class Form extends Component {
     };
   }
 
-  setName(userName) {
-    this.setState({ userName });
-  }
-
   render() {
-    const { buttonText, scene } = this.props.state;
     return (
       <div>
-        <form className="toggle" onSubmit={e => {
-          e.preventDefault();
-          this.setName(e.target.props.elements.nameinput.value);
-          this.goToScene(scene.nextScene);
-        }}>
-          <label>What's Your Name: <input name="nameinput"></input></label>
-          <p><button type="submit">{buttonText}</button></p>
-        </form>
+          <form onSubmit= {e => {
+            e.preventDefault();
+            this.props.setName(e.target.elements.nameinput.value);
+            this.props.goToScene(this.props.scene.nextScene);}}>
+            <label>What's Your Name: <input name="nameinput"></input></label>
+            <p><button type="submit">{this.props.scene.buttonText}</button></p>
+          </form>
       </div >
     );
   }
