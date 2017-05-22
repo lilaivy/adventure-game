@@ -27,6 +27,11 @@
 
 .welcomeImageContainer{
 display: flex;
-
-
 }
+
+.move-on{
+padding:30px;
+margin:30px;
+}
+
+
