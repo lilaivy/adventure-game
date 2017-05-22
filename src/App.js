@@ -27,16 +27,14 @@ class App extends Component {
   }
 
   goToScene(scene) {
-    this.setState({ scene });
+    this.setState({
+      scene,
+      backgroundURL: scene.backgroundUrl,
+      headerText: scene.headerText,
+      bodyText: scene.bodyText,
+      buttonText: scene.buttonText
+    });
     console.log(scene);
-    this.setState({ backgroundURL: scene.backgroundUrl });
-    this.setState({ headerText: scene.headerText });
-    this.setState({ bodyText: scene.bodyText });
-    this.setState({ buttonText: scene.buttonText });
-  }
-
-  goBack(scene) {
-    this.setState({ scene: scene.prevScene });
   }
 
   render() {
@@ -63,7 +61,6 @@ class App extends Component {
               scene={scene}
               buttonText={buttonText}
               goToScene={this.goToScene}
-              goBack={this.goBack}
               callback={scene.callback}
             />
           }

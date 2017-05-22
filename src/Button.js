@@ -17,7 +17,7 @@ class Button extends Component {
             <div>
               <button type="submit" onClick={this.props.callback}>{this.props.buttonText}</button>
               <button onClick={() => {
-                this.props.goBack(this.props.scene);
+                this.props.goToScene(this.props.scene.prevScene);
               }
               }>Go back</button>
             </div>
@@ -29,7 +29,7 @@ class Button extends Component {
                 this.props.goToScene(this.props.scene.nextScene);
               }}>{this.props.buttonText}</button>
               <button onClick={() => {
-                this.props.goBack(this.props.scene);
+                this.props.goToScene(this.props.scene.prevScene);
               }
               }>Go back</button>
             </div>
