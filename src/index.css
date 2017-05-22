@@ -18,6 +18,7 @@ h2 {
   padding: 30px;
   height: 800px;
   background-size: cover;
+  background-color: rgba(0, 0, 0, 100);
 }
 
 .user-block {

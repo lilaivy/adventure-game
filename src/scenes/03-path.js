@@ -1,10 +1,14 @@
 import landingImg from '../img/landingpage.jpg';
-import caveScene from './04-cave';
+import staircaseScene from './03-path';
+import fieldScene from './06-field';
 
 export default {
   backgroundUrl: landingImg,
-  nextScene: caveScene,
+  prevScene: fieldScene,
+  nextScene: staircaseScene,
   headerText: 'Meadow Path',
   bodyText: 'You start out on the path away from your house. It\'s a peaceful scene, lit by summer sun. Which direction do you go?',
-  buttonText: 'Walk Down Path'
+  buttonText: 'Walk Down Path',
+  buttonText2: 'Turn Left'
+
 };
