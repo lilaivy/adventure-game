@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import landingScene from './scenes/01-landing';
+import landingScene from './scenes/01-landing'; //might need to change this because of scene module
 import User from './User';
+import Button from './ActionButton';
+import Form from './EnterUserName';
+//import scenes but what do we do with them?
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      backgroundURL: landingScene.backgroundUrl,
-      headerText: landingScene.headerText,
-      bodyText: landingScene.bodyText,
-      buttonText: landingScene.buttonText,
       userName: '',
       scene: landingScene
     };
+
+    this.setName = this.setName.bind(this);
+    this.goToScene = this.goToScene.bind(this);
   }
 
   setName(userName) {
@@ -23,17 +25,29 @@ class App extends Component {
   goToScene(scene) {
     this.setState({ scene });
     console.log(scene);
-    this.setState({ backgroundURL: scene.backgroundUrl });
-    this.setState({ headerText: scene.headerText });
-    this.setState({ bodyText: scene.bodyText });
-    this.setState({ buttonText: scene.buttonText });
   }
 
   render() {
-    const { headerText, backgroundURL, bodyText, buttonText, userName, scene } = this.state;
+    const { userName, scene } = this.state;
+    const { headerText, backgroundUrl, bodyText, buttonText } = scene;
+    const form = 
+    <Form
+      scene={scene}
+      setName={this.setName}
+      goToScene={this.goToScene}
+    />;
+    const button = 
+    <Button
+      scene={scene}
+      buttonText={buttonText}
+      goToScene={this.goToScene}
+      callback={scene.callback}
+    />;
+    const sceneAction = scene === landingScene ? form : button;
+
     return (
       <div className="main" style={{
-        backgroundImage: `url(${backgroundURL})`
+        backgroundImage: `url(${backgroundUrl})`
       }}>
         <User userName={userName} />
         <div className="wrapper">
@@ -41,20 +55,9 @@ class App extends Component {
             <h2>{headerText}</h2>
           </div>
           <p> {bodyText} </p>
-          <form onSubmit = {e => {
-            e.preventDefault();
-            this.setName(e.target.elements.nameinput.value);
-            this.goToScene(scene.nextScene);
-          }}>
-            <label>What's Your Name? <input name = "nameinput"></input></label>
-            <p><button type="submit">{buttonText}</button></p>
-          </form>
-          <p><button onClick = {e => {
-            e.preventDefault();
-            this.goToScene(scene.previousScene);
-          }}>{buttonText}</button></p>
+          {sceneAction}
         </div>
-      </div >
+      </div>
     );
   }
 }
