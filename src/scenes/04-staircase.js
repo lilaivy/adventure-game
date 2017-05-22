@@ -4,8 +4,6 @@ import caveScene from './05-cave';
 
 export default {
   backgroundUrl: staircaseImg,
-  prevScene: pathScene,
-  nextScene: caveScene,
   headerText: 'Winding Staircase',
   bodyText: 'You approach a winding staircase that leads to a place unseen; the stairs and old and steep, broken in places.',
   buttonText: 'Descend the Stairs'
