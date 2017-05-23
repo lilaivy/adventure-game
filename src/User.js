@@ -20,11 +20,11 @@ class User extends Component {
   }
 
   render() {
-    const { items, health } = this.state;
+    const { health } = this.state;
     return (
       <div className="user-block">
         <p>Player: {this.props.userName}</p>
-        <p>Items: {items}</p>
+        <p>Items: {this.props.items}</p>
         <p>Health: {health} / 100</p>
       </div>
     );
