@@ -5,15 +5,22 @@ import staircaseScene from './scenes/04-staircase';
 import caveScene from './scenes/05-cave';
 import fieldScene from './scenes/06-field';
 import treeScene from './scenes/07-tree';
-
-export default landingScene;
+import napScene from './scenes/naptime';
 
 landingScene.nextScene = expositionScene;
 expositionScene.nextScene = pathScene;
 expositionScene.prevScene = landingScene;
-pathScene.nextScene = caveScene;
+pathScene.nextScene = staircaseScene;
+pathScene.nextScene2 = fieldScene;
 pathScene.prevScene = expositionScene;
-caveScene.nextScene = fieldScene;
-caveScene.prevScene = pathScene;
+
+staircaseScene.nextScene = caveScene;
+staircaseScene.prevScene = pathScene;
+caveScene.prevScene = staircaseScene;
+
 fieldScene.nextScene = treeScene;
-fieldScene.prevScene = fieldScene;
+fieldScene.prevScene = pathScene;
+
+napScene.nextScene = landingScene;
+
+export default landingScene;

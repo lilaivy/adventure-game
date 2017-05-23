@@ -3,6 +3,7 @@
 body {
   text-align: left;
   font-family: 'Open Sans';
+  color: ghostwhite;
 }
 
 h2 {
@@ -11,7 +12,11 @@ h2 {
 }
 
 .wrapper {
-  margin: 10%; 
+  border-radius: 15px;
+  text-align: center;
+  padding: 3%; 
+  margin: 4% auto 0 auto;
+  background-color: hsla(239, 0%, 57%, 0.61)
 }
 
 .main {
@@ -22,8 +27,10 @@ h2 {
 }
 
 .user-block {
-  color: whitesmoke;
-  background-color: rgba(50, 50, 50 50);
+  border-radius: 15px;
+  padding: 2%;
+  display: inline-block;
+  background-color: hsla(239, 0%, 57%, 0.61)
 }
 
 /*.toggle {

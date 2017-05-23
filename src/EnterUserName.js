@@ -6,10 +6,10 @@ export default function EnterUserName(props) {
       <form onSubmit={e => {
         e.preventDefault();
         props.setName(e.target.elements.nameinput.value);
-        props.goToScene(props.scene.nextScene);
+        props.goToScene(props.currentScene.nextScene);
       }}>
         <label>What's Your Name: <input name="nameinput"></input></label>
-        <p><button type="submit">{props.scene.buttonText}</button></p>
+        <p><button type="submit">{props.currentScene.buttonText}</button></p>
       </form>
     </div >
   );
