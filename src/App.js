@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-// import landingScene from './scenes/01-landing'; //might need to change this because of scene module
 import landingScene from './scenes';
 import User from './User';
 import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
+// current scene is somehow storing nextscene, maybe? sometimes?
 
-//import scenes but what do we do with them?
 
 class App extends Component {
   constructor() {
@@ -39,7 +38,7 @@ class App extends Component {
     />;
     const button = 
     <ActionButton
-      currentScene={currentScene}
+      currentScene={currentScene.nextScene}
       buttonText={buttonText}
       goToScene={this.goToScene}
       callback={currentScene.callback}
