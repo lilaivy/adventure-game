@@ -11,6 +11,16 @@ h2 {
   font-family: 'Fjalla One';
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  margin: 3px 1px ;
+}
+
 .wrapper {
   border-radius: 15px;
   text-align: center;
@@ -32,7 +42,3 @@ h2 {
   display: inline-block;
   background-color: hsla(239, 0%, 57%, 0.61)
 }
-
-/*.toggle {
-  display: none;
-}*/

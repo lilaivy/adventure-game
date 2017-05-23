@@ -5,7 +5,7 @@ function UserStats({ user }) {
   return (
     <div className="user-block">
       <p>Player: {user.name}</p>
-      <p>Items: {user.items.map(item => `${item.name}  `)}   </p>
+      <ul>Items: {user.items.map(item => <li>{item.name}</li>)}   </ul>
       <p>Teabuzz: {user.teaBuzz} / 100</p>
     </div>
   );

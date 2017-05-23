@@ -16,8 +16,7 @@ export default function ActionButton(props) {
       {props.currentScene.choice3 &&
         <button onClick={() => {
           callback(props.currentScene.nextScene2);
-        }
-        }>
+        }}>
           {props.buttonText2}
         </button>
       }
