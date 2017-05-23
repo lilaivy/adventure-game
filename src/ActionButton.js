@@ -6,17 +6,17 @@ export default function ActionButton(props) {
   return (
     <div>
       <button onClick={() => {
-        callback(props.currentScene);
+        callback(props.currentScene.nextScene);
       }}>
         {props.buttonText}
       </button>
 
       {props.currentScene.choice3 &&
         <button onClick={() => {
-          callback(props.currentScene);
+          callback(props.currentScene.nextScene2);
         }
         }>
-          {props.buttonText}
+          {props.buttonText2}
         </button>
       }
 

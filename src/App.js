@@ -29,7 +29,7 @@ class App extends Component {
 
   render() {
     const { userName, currentScene } = this.state;
-    const { headerText, backgroundUrl, bodyText, buttonText } = currentScene;
+    const { headerText, backgroundUrl, bodyText, buttonText, buttonText2 } = currentScene;
     const form = 
     <EnterUserName
       currentScene={currentScene}
@@ -38,8 +38,9 @@ class App extends Component {
     />;
     const button = 
     <ActionButton
-      currentScene={currentScene.nextScene}
+      currentScene={currentScene}
       buttonText={buttonText}
+      buttonText2={buttonText2}
       goToScene={this.goToScene}
       callback={currentScene.callback}
     />;

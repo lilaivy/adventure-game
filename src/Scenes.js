@@ -12,11 +12,12 @@ expositionScene.prevScene = landingScene;
 pathScene.nextScene = staircaseScene;
 pathScene.nextScene2 = fieldScene;
 pathScene.prevScene = expositionScene;
-staircaseScene.prevScene = caveScene;
+
+staircaseScene.nextScene = caveScene;
 staircaseScene.prevScene = pathScene;
-caveScene.nextScene = fieldScene;
-caveScene.prevScene = pathScene;
+caveScene.prevScene = staircaseScene;
+
 fieldScene.nextScene = treeScene;
-fieldScene.prevScene = fieldScene;
+fieldScene.prevScene = pathScene;
 
 export default landingScene;

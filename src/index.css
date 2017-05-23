@@ -12,6 +12,7 @@ h2 {
 
 .wrapper {
   margin: 10%; 
+  background-color: hsla(239, 0%, 57%, 0.61)
 }
 
 .main {
