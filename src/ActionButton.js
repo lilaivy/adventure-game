@@ -20,6 +20,14 @@ export default function ActionButton(props) {
         </button>
       }
 
+      {props.currentScene.items.length > 0 &&
+        props.currentScene.items.map(item => {
+          return <button key={item.name} onClick={() => props.addItem(item)}>
+            Pick Up {item.name}
+            </button>;
+        })
+      }
+
       <button onClick={() => {
         props.goToScene(props.currentScene.prevScene);
       }}>

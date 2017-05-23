@@ -1,48 +1,53 @@
 import React, { Component } from 'react';
 import landingScene from './scenes';
-import User from './User';
+import User from './User-stats';
 import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
-
-const items = [
-  // { name: 'Taiwanese Wulong', teaDrunk: 10, category: 'tea' },
-  { name: 'Big Red Robe Wulong', teaDrunk: 20, category: 'tea' },
-  { name: '1950 Pu\'er', teaDrunk: 30, category: 'tea' },
-  { name: '1950 Pu\'er', teaDrunk: 30, category: 'tea' },
-  { name: 'Broadsword', damage: 30, category: 'weapon' }
-];
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      userName: '',
+      user: {
+        name: '',
+        items: [],
+        teaBuzz: 100
+      },
       currentScene: landingScene,
       
     };
 
     this.setName = this.setName.bind(this);
     this.goToScene = this.goToScene.bind(this);
+    this.addItem = this.addItem.bind(this);
   }
 
   setName(userName) {
-    this.setState({ userName });
+    const user = this.state.user;
+    this.setState({
+      user: Object.assign(user, { name: userName })
+    });
   }
 
   goToScene(scene) {
     this.setState({ currentScene: scene });
   }
 
-  foundItem(item) {
-    this.setState(item[0]);
-    alert(`You found a ${item}!`);
+  addItem(item) {
+    const user = this.state.user;
+    const items = user.items.slice();
+    items.push(item);
+    this.setState({
+      user: Object.assign(user, { items })
+    });
+    alert(`You found a ${item.name}!`);
   }
 
   // wanting to add item when user navigates to a given scene, where do we store the item data and user data and where do we call a function to add that item to user state? top level or user component...
 
   render() {
-    const { userName, currentScene } = this.state;
+    const { currentScene, user } = this.state;
     const { headerText, backgroundUrl, bodyText, buttonText, buttonText2 } = currentScene;
     const form =
       <EnterUserName
@@ -56,6 +61,7 @@ class App extends Component {
         buttonText={buttonText}
         buttonText2={buttonText2}
         goToScene={this.goToScene}
+        addItem={this.addItem}
         callback={currentScene.callback}
       />;
     const sceneAction = currentScene === landingScene ? form : button;
@@ -64,7 +70,7 @@ class App extends Component {
       <div className="main" style={{
         backgroundImage: `url(${backgroundUrl})`
       }}>
-        <User userName={userName} items={items} />
+        <User user={ user } />
         <div className="wrapper">
           <div className="Scene-header">
             <h2>{headerText}</h2>

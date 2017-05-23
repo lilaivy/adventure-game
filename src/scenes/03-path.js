@@ -6,6 +6,6 @@ export default {
   bodyText: 'You start out on the path away from your house. It\'s a peaceful scene, lit by summer sun. Which direction do you go?',
   buttonText: 'Walk Down Path',
   buttonText2: 'Cross creek',
-  choice3: true
-
+  choice3: true,
+  items: []
 };

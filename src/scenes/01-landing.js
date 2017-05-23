@@ -4,5 +4,6 @@ export default {
   backgroundUrl: landingPageImg,
   headerText: 'Welcome to Tea Quest!',
   bodyText: 'To start your tea journey, enter your name below.',
-  buttonText: 'Start Game'
+  buttonText: 'Start Game',
+  items: []
 };
