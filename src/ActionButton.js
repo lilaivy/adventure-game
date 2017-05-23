@@ -24,9 +24,9 @@ export default function ActionButton(props) {
       {props.currentScene.items.length > 0 &&
         props.currentScene.items.map(item => {
           return <button className="button" key={item.name} onClick={() => {
-            props.addItem(item);  
+            props.addItem(item);
             const index = props.currentScene.items.indexOf(item);
-            props.currentScene.items.splice(index);
+            props.currentScene.items.splice(index, 1);
           }}>
             Pick Up {item.name}
           </button>;

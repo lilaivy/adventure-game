@@ -38,8 +38,17 @@ class App extends Component {
   }
 
   goToScene(scene) {
+    const user = this.state.user;
     this.setState({ currentScene: scene });
-    if (this.state.user.teaBuzz <= 0) return;
+    if (this.state.currentScene === landingScene) {
+      return this.setState({
+        user: Object.assign(user, {
+          items: [],
+          teaBuzz: 100
+        })
+      });
+    }
+    if (user.teaBuzz <= 0) return;
     this.changeTeaBuzz(-10);
   }
 
@@ -49,7 +58,7 @@ class App extends Component {
     this.setState({
       user: Object.assign(user, { teaBuzz })
     });
-    if (teaBuzz <= 0) { this.goToScene(napScene); }
+    if (teaBuzz <= 0) this.goToScene(napScene);
   }
 
   addItem(item) {
