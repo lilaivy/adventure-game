@@ -1,7 +1,7 @@
-import napImg from '../img/nap.jpg';
+import victoryImg from '../img/tea-party.jpg';
 
 export default {
-  backgroundUrl: napImg,
+  backgroundUrl: victoryImg,
   noncommital: false,
   headerText: 'You did it! Tea party time!',
   bodyText: 'You defeated the villain! Time for a tea party with all of your friends.',
