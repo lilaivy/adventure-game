@@ -6,11 +6,11 @@ export default function ActionButton(props) {
   return (
     <div>
       {props.currentScene.buttonText &&
-      <button onClick={() => {
-        callback(props.currentScene.nextScene);
-      }}>
-        {props.buttonText}
-      </button>
+        <button onClick={() => {
+          callback(props.currentScene.nextScene);
+        }}>
+          {props.buttonText}
+        </button>
       }
 
       {props.currentScene.choice3 &&
@@ -24,9 +24,13 @@ export default function ActionButton(props) {
 
       {props.currentScene.items.length > 0 &&
         props.currentScene.items.map(item => {
-          return <button key={item.name} onClick={() => props.addItem(item)}>
+          return <button key={item.name} onClick={() => {
+            props.addItem(item);  
+            const index = props.currentScene.items.indexOf(item);
+            props.currentScene.items.splice(index);
+          }}>
             Pick Up {item.name}
-            </button>;
+          </button>;
         })
       }
 
