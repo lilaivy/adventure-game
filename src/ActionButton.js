@@ -1,15 +1,17 @@
 import React from 'react';
 
 export default function ActionButton(props) {
-  const callback = props.callback || props.goToScene;
+  const callback = props.goToScene;
 
   return (
     <div>
+      {props.currentScene.buttonText &&
       <button onClick={() => {
         callback(props.currentScene.nextScene);
       }}>
         {props.buttonText}
       </button>
+      }
 
       {props.currentScene.choice3 &&
         <button onClick={() => {

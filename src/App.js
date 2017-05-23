@@ -5,6 +5,13 @@ import User from './User-stats';
 import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
 
+// TODO: make items disappear once you find them
+// TODO: make villain appear and interact when climb up tree
+// TODO: make another button appear on tree scene
+// TODO: be able to attack the villain/make a fight
+// TODO: reset state after nap time
+// TODO Stretch: maybe break scene into component
+
 class App extends Component {
   constructor() {
     super();
