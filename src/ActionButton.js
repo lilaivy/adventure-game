@@ -6,7 +6,7 @@ export default function ActionButton(props) {
   return (
     <div>
       {props.currentScene.buttonText &&
-        <button onClick={() => {
+        <button className="button" onClick={() => {
           callback(props.currentScene.nextScene);
         }}>
           {props.buttonText}
@@ -14,7 +14,7 @@ export default function ActionButton(props) {
       }
 
       {props.currentScene.choice3 &&
-        <button onClick={() => {
+        <button className="button" onClick={() => {
           callback(props.currentScene.nextScene2);
         }}>
           {props.buttonText2}
@@ -23,7 +23,7 @@ export default function ActionButton(props) {
 
       {props.currentScene.items.length > 0 &&
         props.currentScene.items.map(item => {
-          return <button key={item.name} onClick={() => {
+          return <button className="button" key={item.name} onClick={() => {
             props.addItem(item);  
             const index = props.currentScene.items.indexOf(item);
             props.currentScene.items.splice(index);
@@ -33,7 +33,7 @@ export default function ActionButton(props) {
         })
       }
 
-      <button onClick={() => {
+      <button className="button" onClick={() => {
         props.goToScene(props.currentScene.prevScene);
       }}>
         Go back
