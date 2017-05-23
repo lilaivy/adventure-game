@@ -7,5 +7,5 @@ export default {
   bodyText: 'epiiccc',
   buttonText: 'pick Up Tea',
   buttonText2: 'Fight villain with Sword',
-  items: [ { name: '1950\'s Pu\'er', teaDrunk: 30, category: 'tea' } ]
+  items: [ { name: '1950\'s Pu\'er', teaBuzz: 30, category: 'tea' } ]
 };

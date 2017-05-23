@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import landingScene from './scenes';
+import napScene from './scenes/naptime';
 import User from './User-stats';
 import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
@@ -15,7 +16,7 @@ class App extends Component {
         teaBuzz: 100
       },
       currentScene: landingScene,
-      
+
     };
 
     this.setName = this.setName.bind(this);
@@ -32,19 +33,29 @@ class App extends Component {
 
   goToScene(scene) {
     this.setState({ currentScene: scene });
+    if (this.state.user.teaBuzz <= 0) return;
+    this.changeTeaBuzz(-10);
+  }
+
+  changeTeaBuzz(teaBuzz) {
+    const user = this.state.user;
+    teaBuzz = user.teaBuzz + teaBuzz;
+    this.setState({
+      user: Object.assign(user, { teaBuzz })
+    });
+    if (teaBuzz <= 0) { this.goToScene(napScene); }
   }
 
   addItem(item) {
     const user = this.state.user;
     const items = user.items.slice();
     items.push(item);
+    const teaBuzz = user.teaBuzz + item.teaBuzz;
     this.setState({
-      user: Object.assign(user, { items })
+      user: Object.assign(user, { items, teaBuzz })
     });
     alert(`You found a ${item.name}!`);
   }
-
-  // wanting to add item when user navigates to a given scene, where do we store the item data and user data and where do we call a function to add that item to user state? top level or user component...
 
   render() {
     const { currentScene, user } = this.state;
@@ -70,7 +81,7 @@ class App extends Component {
       <div className="main" style={{
         backgroundImage: `url(${backgroundUrl})`
       }}>
-        <User user={ user } />
+        <User user={user} />
         <div className="wrapper">
           <div className="Scene-header">
             <h2>{headerText}</h2>

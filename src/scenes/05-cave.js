@@ -8,6 +8,6 @@ export default {
   buttonText: 'Peer into Cave',
   items: [  
     { name: 'Broadsword', damage: 30, category: 'weapon' }, 
-    { name: 'Taiwanese Wulong', teaDrunk: 10, category: 'tea' } 
+    { name: 'Taiwanese Wulong', teaBuzz: 10, category: 'tea' } 
   ]
 };
