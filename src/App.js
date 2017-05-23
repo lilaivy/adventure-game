@@ -8,7 +8,8 @@ import EnterUserName from './EnterUserName';
 // TODO: make villain appear and interact when climb up tree
 // TODO: make another button appear on tree scene
 // TODO: be able to attack the villain/make a fight
-// TODO: reset state after nap time
+// DONE: reset state after nap time
+// DONE: fixed bug
 // TODO Stretch: maybe break scene into component
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
     this.setName = this.setName.bind(this);
     this.goToScene = this.goToScene.bind(this);
     this.addItem = this.addItem.bind(this);
+    this.fightVillain = this.fightVillain.bind(this);
   }
 
   setName(userName) {
@@ -72,6 +74,17 @@ class App extends Component {
     alert(`You found a ${item.name}!`);
   }
 
+  fightVillain() {
+    const user = this.state.user;
+    //reduce villain teaBuzz - alert
+    //reduce user teaBuzz - alert
+    const teaBuzz = user.teaBuzz - 20;
+    this.setState({
+      user: Object.assign(user, { teaBuzz })
+    });
+    alert('The Villain attacked you! Your energy drops!');
+  }
+
   render() {
     const { currentScene, user } = this.state;
     const { headerText, backgroundUrl, bodyText, buttonText, buttonText2 } = currentScene;
@@ -88,6 +101,7 @@ class App extends Component {
         buttonText2={buttonText2}
         goToScene={this.goToScene}
         addItem={this.addItem}
+        fightVillain={this.fightVillain}
         callback={currentScene.callback}
       />;
     const sceneAction = currentScene === landingScene ? form : button;

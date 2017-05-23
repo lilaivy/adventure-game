@@ -33,6 +33,14 @@ export default function ActionButton(props) {
         })
       }
 
+      {props.currentScene.villain &&
+        <button className="button" onClick={() => {
+          props.fightVillain();
+        }}>
+          {props.buttonText2}
+        </button>
+      }
+
       <button className="button" onClick={() => {
         props.goToScene(props.currentScene.prevScene);
       }}>
