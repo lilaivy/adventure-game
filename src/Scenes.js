@@ -6,6 +6,7 @@ import caveScene from './scenes/05-cave';
 import fieldScene from './scenes/06-field';
 import treeScene from './scenes/07-tree';
 import battleScene from './scenes/08-villain-battle';
+import victoryScene from './scenes/victory';
 import napScene from './scenes/naptime';
 
 landingScene.nextScene = expositionScene;
@@ -26,7 +27,9 @@ treeScene.nextScene = battleScene;
 treeScene.prevScene = fieldScene;
 
 battleScene.prevScene = treeScene;
+battleScene.nextScene = victoryScene;
 
 napScene.nextScene = landingScene;
+victoryScene.nextScene = landingScene;
 
 export default landingScene;

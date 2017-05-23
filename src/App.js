@@ -5,11 +5,15 @@ import User from './User-stats';
 import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
 
-// TODO: make villain appear and interact when climb up tree
-// TODO: make another button appear on tree scene
 // TODO: be able to attack the villain/make a fight
+// TODO: Remove go back buttons for 'Nap', 'Landing' and 'Exposition'
+
+// DONE: make villain appear and interact when climb up tree
+// DONE: make another button appear on tree scene
+
 // DONE: reset state after nap time
 // DONE: fixed bug
+
 // TODO Stretch: maybe break scene into component
 
 class App extends Component {
@@ -23,7 +27,6 @@ class App extends Component {
         teaBuzz: 100
       },
       currentScene: landingScene,
-
     };
 
     this.setName = this.setName.bind(this);
@@ -76,13 +79,26 @@ class App extends Component {
 
   fightVillain() {
     const user = this.state.user;
-    //reduce villain teaBuzz - alert
-    //reduce user teaBuzz - alert
+    const currentScene = this.state.currentScene;
+    const health = currentScene.villain.health -= 20;
+    this.setState({ currentScene });
+    alert(`You attacked the villain! His health is now ${health}!`);
+    if (health <= 0) {
+      const victoryTea = {
+        name: 'Dragonwell Green',
+        category: 'tea', 
+        teaBuzz: 100
+      };
+      this.addItem(victoryTea);
+      return this.goToScene(currentScene.nextScene);
+    }
+
     const teaBuzz = user.teaBuzz - 20;
     this.setState({
       user: Object.assign(user, { teaBuzz })
     });
     alert('The Villain attacked you! Your energy drops!');
+    if (teaBuzz <= 0) this.goToScene(napScene);
   }
 
   render() {
