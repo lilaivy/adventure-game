@@ -5,15 +5,9 @@ import User from './User-stats';
 import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
 
-// TODO: be able to attack the villain/make a fight
-// TODO: Remove go back buttons for 'Nap', 'Landing' and 'Exposition'
-
-// DONE: make villain appear and interact when climb up tree
-// DONE: make another button appear on tree scene
-
-// DONE: reset state after nap time
-// DONE: fixed bug
-
+// TODO: Changing images
+// TODO: Add logic so you can only fight villain with broadsword
+// TODO: Remove extra teas
 // TODO Stretch: maybe break scene into component
 
 class App extends Component {

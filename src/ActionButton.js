@@ -41,11 +41,12 @@ export default function ActionButton(props) {
         </button>
       }
 
-      <button className="button" onClick={() => {
-        props.goToScene(props.currentScene.prevScene);
-      }}>
-        Go back
-      </button>
+      {props.currentScene.noncommital &&
+        <button className="button" onClick={() => {
+          props.goToScene(props.currentScene.prevScene);
+        }}>
+          Go back
+      </button>}
     </div>
   );
 }
