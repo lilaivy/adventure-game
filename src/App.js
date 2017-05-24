@@ -6,6 +6,9 @@ import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
 
 // TODO: reset items in scenes when restarting game by button click
+// TODO: change copy 
+// TODO: fix broadsword conditional logic
+
 class App extends Component {
   constructor() {
     super();
@@ -71,7 +74,7 @@ class App extends Component {
     const user = this.state.user;
     const currentScene = this.state.currentScene;
     let health = 0;
-    if (user.items.includes('Broadsword')) {
+    if (user.items.includes('Broadsword')) { //haspropertyof? broadsword is a string on an object, woops
       health = currentScene.villain.health -= 20;
     } else {
       alert('You haven\'t found a weapon yet! You throw tea, but it only makes him stronger');
