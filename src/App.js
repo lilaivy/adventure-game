@@ -6,8 +6,8 @@ import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
 
 // TODO: reset items in scenes when restarting game by button click
-// TODO: change copy 
-// TODO: fix broadsword conditional logic
+// DONE: change copy 
+// TODO: break scene into separate component
 
 class App extends Component {
   constructor() {
@@ -78,12 +78,12 @@ class App extends Component {
     if (user.items.some(item => item.name === 'Broadsword')) {
       health = currentScene.villain.health -= 20;
     } else {
-      alert('You haven\'t found a weapon yet! You throw tea, but it only makes him stronger');
+      alert('You haven\'t found a weapon yet! You throw tea at the wizard, but it only makes him stronger.');
       health = currentScene.villain.health += 5;
     }
 
     this.setState({ currentScene });
-    alert(`You attacked the villain! His teabuzz is now ${health}!`);
+    alert(`You attacked the wizard! His teabuzz is now ${health}!`);
     if (health <= 0) {
       const victoryTea = {
         name: 'Dragonwell Green',
@@ -98,7 +98,7 @@ class App extends Component {
     this.setState({
       user: Object.assign(user, { teaBuzz })
     });
-    alert('The Villain attacked you! Your teabuzz drops!');
+    alert('The wizard attacked you! Your teabuzz drops!');
     if (teaBuzz <= 0) this.goToScene(napScene);
   }
 
