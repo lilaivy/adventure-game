@@ -2,7 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 body {
   color: white;
-  font-family: Montserrat; }
+  font-family: Montserrat;
+  text-shadow: 1px 1px 2px gray; }
 
 h2 {
   margin: 0;
