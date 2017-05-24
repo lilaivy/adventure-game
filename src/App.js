@@ -5,11 +5,7 @@ import User from './User-stats';
 import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
 
-// TODO: Changing images
-// TODO: Add logic so you can only fight villain with broadsword
-// TODO: Remove extra teas
-// TODO Stretch: maybe break scene into component
-
+// TODO: reset items in scenes when restarting game by button click
 class App extends Component {
   constructor() {
     super();
@@ -74,13 +70,19 @@ class App extends Component {
   fightVillain() {
     const user = this.state.user;
     const currentScene = this.state.currentScene;
-    const health = currentScene.villain.health -= 20;
+    let health = 0;
+    if (user.items.includes('Broadsword')) {
+      health = currentScene.villain.health -= 20;
+    } else {
+      alert('You haven\'t found a weapon yet! You throw tea, but it only makes him stronger');
+      health = currentScene.villain.health += 5;
+    }
     this.setState({ currentScene });
-    alert(`You attacked the villain! His health is now ${health}!`);
+    alert(`You attacked the villain! His teabuzz is now ${health}!`);
     if (health <= 0) {
       const victoryTea = {
         name: 'Dragonwell Green',
-        category: 'tea', 
+        category: 'tea',
         teaBuzz: 100
       };
       this.addItem(victoryTea);
@@ -91,7 +93,7 @@ class App extends Component {
     this.setState({
       user: Object.assign(user, { teaBuzz })
     });
-    alert('The Villain attacked you! Your energy drops!');
+    alert('The Villain attacked you! Your teabuzz drops!');
     if (teaBuzz <= 0) this.goToScene(napScene);
   }
 
