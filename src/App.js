@@ -6,8 +6,8 @@ import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
 
 // TODO: reset items in scenes when restarting game by button click
-// TODO: change copy 
-// TODO: fix broadsword conditional logic
+// DONE: change copy 
+// DONE: fix broadsword conditional logic
 
 class App extends Component {
   constructor() {

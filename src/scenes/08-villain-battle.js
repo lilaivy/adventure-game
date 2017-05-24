@@ -4,7 +4,7 @@ export default {
   backgroundUrl: battleImg,
   noncommital: true,
   headerText: 'Fight!',
-  bodyText: 'You reach the foot of an ancient and beautiful tree - the branches are tall and gnarled. Above you, something rustles. What do you do?',
+  bodyText: 'Oh no! The villain that stole you tea was waiting for you in the tree, teabuzzed beyond sanity from all your tea. Do you have what it takes to defeat him?',
   buttonText2: 'Swing sword',
   items: [],
   villain: { name: 'Tea Stealer', health: 100, category: 'tea' }
