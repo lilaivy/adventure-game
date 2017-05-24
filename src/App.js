@@ -5,10 +5,6 @@ import User from './User-stats';
 import ActionButton from './ActionButton';
 import EnterUserName from './EnterUserName';
 
-// TODO: reset items in scenes when restarting game by button click
-// DONE: change copy 
-// DONE: fix broadsword conditional logic
-
 class App extends Component {
   constructor() {
     super();
@@ -38,14 +34,7 @@ class App extends Component {
   goToScene(scene) {
     const user = this.state.user;
     this.setState({ currentScene: scene });
-    if (this.state.currentScene === landingScene) {
-      return this.setState({
-        user: Object.assign(user, {
-          items: [],
-          teaBuzz: 100
-        })
-      });
-    }
+    if (this.state.currentScene.nextScene === landingScene) window.location.reload(); 
     if (user.teaBuzz <= 0) return;
     this.changeTeaBuzz(-10);
   }
