@@ -8,5 +8,3 @@ export default {
   buttonText: 'Ready? Let\'s Play',
   items: []
 };
-
-// create scenes module that 'keys' or wires up the sequencing of the different scenes to avoid circular referencing which breaks the back functionality
