@@ -19,5 +19,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://vertedinde.github.io/adventure-game"
+  "homepage": "https://neverssync.github.io/adventure-game"
 }
