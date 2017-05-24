@@ -74,13 +74,14 @@ class App extends Component {
     const user = this.state.user;
     const currentScene = this.state.currentScene;
     let health = 0;
-    const broadsword = { name: 'Broadsword', teaBuzz: 0, damage: 30, category: 'weapon' };
-    if (user.items.includes( broadsword )) { //this doesn't work. includes is not seeing that user has it when they do.
+
+    if (user.items.some(item => item.name === 'Broadsword')) {
       health = currentScene.villain.health -= 20;
     } else {
       alert('You haven\'t found a weapon yet! You throw tea, but it only makes him stronger');
       health = currentScene.villain.health += 5;
     }
+
     this.setState({ currentScene });
     alert(`You attacked the villain! His teabuzz is now ${health}!`);
     if (health <= 0) {
