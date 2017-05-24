@@ -65,14 +65,14 @@ class App extends Component {
     let health = 0;
 
     if (user.items.some(item => item.name === 'Broadsword')) {
-      health = currentScene.villain.health -= 20;
+      health = currentScene.villain.health -= 15;
     } else {
-      alert('You haven\'t found a weapon yet! You throw tea, but it only makes him stronger');
+      alert('You haven\'t found a weapon yet! You throw tea at the wizard, but it only makes him stronger.');
       health = currentScene.villain.health += 5;
     }
 
     this.setState({ currentScene });
-    alert(`You attacked the villain! His teabuzz is now ${health}!`);
+    alert(`You attacked the wizard! His teabuzz is now ${health}!`);
     if (health <= 0) {
       const victoryTea = {
         name: 'Dragonwell Green',
@@ -87,7 +87,7 @@ class App extends Component {
     this.setState({
       user: Object.assign(user, { teaBuzz })
     });
-    alert('The Villain attacked you! Your teabuzz drops!');
+    alert('The wizard attacked you! Your teabuzz drops!');
     if (teaBuzz <= 0) this.goToScene(napScene);
   }
 
