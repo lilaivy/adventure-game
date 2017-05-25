@@ -36,7 +36,7 @@ class App extends Component {
     this.setState({ currentScene: scene });
     if (this.state.currentScene.nextScene === landingScene) window.location.reload(); 
     if (user.teaBuzz <= 0) return;
-    this.changeTeaBuzz(-10);
+    this.changeTeaBuzz(-5);
   }
 
   changeTeaBuzz(teaBuzz) {
@@ -65,7 +65,7 @@ class App extends Component {
     let health = 0;
 
     if (user.items.some(item => item.name === 'Broadsword')) {
-      health = currentScene.villain.health -= 15;
+      health = currentScene.villain.health -= 20;
     } else {
       alert('You haven\'t found a weapon yet! You throw tea at the wizard, but it only makes him stronger.');
       health = currentScene.villain.health += 5;
@@ -83,7 +83,7 @@ class App extends Component {
       return this.goToScene(currentScene.nextScene);
     }
 
-    const teaBuzz = user.teaBuzz - 20;
+    const teaBuzz = user.teaBuzz - 15;
     this.setState({
       user: Object.assign(user, { teaBuzz })
     });
