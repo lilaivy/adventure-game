@@ -1,18 +1,19 @@
 import React from 'react';
 import './App.css';
-import Image from './images/welcome.jpg';
+// import Image from './images/welcome.jpg';
+import GameIntro from './GameIntro'
 
 
-function UserSignin(props) {
+function UserSignin({name, scene, changeScene, changeName}) {
     return (
         <div className="welcome">
-            <h2>Welcome To Hawaii Your Adventure {props.name}</h2>
+            <h2>Welcome To Hawaii Your Adventure {name}</h2>
         <p className="get-started">
             To get started, enter your name:
         </p>
         <form onSubmit={event => {
             event.preventDefault();
-            props.changeName(event.target.elements.signin.value);
+            changeName(event.target.elements.signin.value);
         }}
             className="intro-form" >
             <input style={{
@@ -33,11 +34,7 @@ function UserSignin(props) {
                 name="submit"
             />
         </form>
-        {/*<div className="welcomeImageContainer"
-        style={{
-            backgroundImage:`url(${Image})`,
-            backgroundSize: 'cover',}}>
-        </div>*/}
+        <button onClick={() => changeScene(GameIntro)}>Start Your Adventure</button>
       </div >
     );
 }
