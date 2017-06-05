@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserSignin from './UserSignin';
-// import GameIntro from './GameIntro'
+import ChangeSceneButton from './ChangeSceneButton'
 
 export default class App extends Component {
   constructor() {
@@ -10,12 +10,12 @@ export default class App extends Component {
       name: '',
       message: '',
       scene: UserSignin,
-      image: '',
-      text: ''
+    
 
     }
     this.changeName = this.changeName.bind(this);
-    this.changeScene = this.changeScene.bind(this);
+    this.changeScene= this.changeScene.bind(this);
+   
   }
 
 
@@ -28,12 +28,9 @@ export default class App extends Component {
   }
 
   changeScene(scene) {
-    this.setState({ scene });
+    this.setState({scene});
   }
-  changeImage(image) {
-    this.setState({ image });
 
-  }
 
   render() {
     const { name } = this.state;
@@ -44,7 +41,11 @@ export default class App extends Component {
         <UserSignin
           name={name}
           changeName={this.changeName}
-          changeScene={this.changeScene} />
+           />
+
+          <ChangeSceneButton
+          changeScene={this.changeScene}/>
+      
       </div>
     );
   }

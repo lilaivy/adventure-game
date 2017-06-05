@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 // import Image from './images/welcome.jpg';
-import GameIntro from './GameIntro'
 
 
 function UserSignin({name, scene, changeScene, changeName}) {
@@ -34,7 +33,7 @@ function UserSignin({name, scene, changeScene, changeName}) {
                 name="submit"
             />
         </form>
-        <button onClick={() => changeScene(GameIntro)}>Start Your Adventure</button>
+        
       </div >
     );
 }
