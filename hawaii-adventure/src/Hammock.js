@@ -5,7 +5,7 @@ export default function Hammock () {
 
     return(
          <div className="Hammock">
-          <h2>Oh no {name}! You've encountered a touristy Luau that is blocking your beach access! Throw on a grass skirt and hula your way through the crowd. </h2>
+          {/*<h2>Well, {name}! You've had {drinks} drinks.  You should sleep it off on this hammock. </h2>*/}
           <img src={hammock} className="hammock" alt='hammock' />
         </div>
     )
