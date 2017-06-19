@@ -37,7 +37,8 @@ function UserSignin({name, scene, changeScene, changeName}) {
         </form>
          <ChangeSceneButton
          changeScene={changeScene}
-         Scene={GameIntro}/>
+         Scene={GameIntro}
+         buttonMessage="Start Your Adventure!"/>
         
       </div >
     );

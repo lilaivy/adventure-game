@@ -17,7 +17,8 @@ export default function GameIntro({ name, changeScene, Scene }) {
             <ChangeSceneButton
                 changeScene={changeScene}
                 Scene={PinaColada} 
-                name={name}/>
+                name={name}
+                buttonMessage="Let The Fun Begin"/>
         </div>
 
     )

@@ -5,7 +5,7 @@ export default function changeSceneButton(props) {
         <div>
             <button className="scene-button"
                 onClick={() => props.changeScene(props.Scene)}>
-                Start Your Adventure</button>
+               {props.buttonMessage}</button>
         </div>
 
     )
