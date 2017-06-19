@@ -8,7 +8,7 @@ export default class SendMessage extends Component {
             message: ''
         }
 
-        this.changeMessage = this.changeMessage(this);
+     
     }
 
     changeMessage(message) {
