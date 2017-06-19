@@ -9,7 +9,7 @@ export default class App extends Component {
     super();
     this.state = {
       name: '',
-      scene: UserSignin,
+      Scene: UserSignin,
 
 
     }
@@ -23,18 +23,18 @@ export default class App extends Component {
     this.setState({ name });
   }
 
-  changeScene(scene) {
-    this.setState({ scene });
+  changeScene(Scene) {
+    this.setState({ Scene });
   }
 
 
   render() {
-    const { name } = this.state;
+    const { name , Scene} = this.state;
 
 
     return (
       <div>
-        <UserSignin
+        <Scene
           name={name}
           changeName={this.changeName}
           changeScene={this.changeScene}
