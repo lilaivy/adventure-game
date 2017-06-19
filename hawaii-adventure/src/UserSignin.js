@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ChangeSceneButton from './ChangeSceneButton';
 // import Image from './images/welcome.jpg';
 
 
@@ -33,6 +34,7 @@ function UserSignin({name, scene, changeScene, changeName}) {
                 name="submit"
             />
         </form>
+         <ChangeSceneButton />
         
       </div >
     );
