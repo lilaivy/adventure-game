@@ -2,10 +2,8 @@ import React from 'react';
 import './App.css';
 import pina from './images/pina.jpg';
 import Luau from './Luau';
-import Hammock from './Hammock';
 import beer from './images/beer.jpg';
 import ChangeSceneButton from './ChangeSceneButton';
-// import GameIntro from './GameIntro';
 
 
 
