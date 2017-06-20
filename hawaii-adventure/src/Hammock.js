@@ -7,7 +7,7 @@ export default function Hammock ({changeScene, Scene, name}) {
 
     return(
          <div className="Hammock">
-          <h2>Well, {name}, You are partying too hard.  You should sleep it off on this hammock. </h2>
+          <h2>Well, {name}, you are partying too hard.  You should sleep it off on this hammock. </h2>
           <img src={hammock} className="hammock" alt='hammock' />
            <ChangeSceneButton
                 changeScene={changeScene}

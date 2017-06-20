@@ -14,7 +14,7 @@ export default function PinaColada({ name, changeScene, Scene, buttonMessage }) 
         <div className="adventureMessage">
             <h2>Surf's up, {name}! It's time to cruise to the beach! </h2>
 
-            <h2>But grab a drink first, duh!</h2>
+            <h2>But grab one more drink first, duh!</h2>
 
             <img src={pina} className="pinaImage" alt='pina' />
             <ChangeSceneButton
