@@ -3,8 +3,9 @@ import './App.css';
 import Image from './images/welcome.jpg';
 import ChangeSceneButton from './ChangeSceneButton'
 import SendMessage from './SendMessage';
-import PinaColada from './PinaColada'
-// import UserSignin from './UserSignin'
+// import PinaColada from './PinaColada';
+import Lobby from './Lobby'
+
 
 export default function GameIntro({ name, changeScene, Scene }) {
     return (
@@ -16,7 +17,7 @@ export default function GameIntro({ name, changeScene, Scene }) {
             />
             <ChangeSceneButton
                 changeScene={changeScene}
-                Scene={PinaColada} 
+                Scene={Lobby} 
                 name={name}
                 buttonMessage="Let The Fun Begin"/>
         </div>

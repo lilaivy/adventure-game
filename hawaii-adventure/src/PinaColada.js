@@ -25,7 +25,8 @@ export default function PinaColada({ name, changeScene, Scene, buttonMessage }) 
             <ChangeSceneButton
                 buttonMessage="Beer Colada"
                 changeScene={changeScene}
-                Scene={Hammock} />
+                Scene={Hammock} 
+                name={name}/>
         </div>
 
     );

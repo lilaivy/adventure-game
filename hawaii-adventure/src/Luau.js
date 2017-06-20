@@ -2,11 +2,13 @@ import React from 'react';
 import Dead from './Dead';
 import Beach from './Beach';
 import ChangeSceneButton from './ChangeSceneButton';
+import luau from './images/luau.jpg'
 
 export default function Luau ({changeScene, Scene, name}) {
   return(
   <div className="Luau">
     <h2>Oh no {name}! You've encountered a touristy Luau that is blocking your beach access! Do you throw on a grass skirt and hula your way through the crowd? or find an expert surfer who will take you to the best beaches on the island? </h2>
+  <img src={luau} className="luau" alt='luau' />
     <ChangeSceneButton
       changeScene={changeScene}
       Scene={Dead}

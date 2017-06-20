@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserSignin from './UserSignin';
-// import pina from './images/pina.jpg';
-// import luau from './images/luau.jpg'
+
 
 export default class App extends Component {
   constructor() {
@@ -10,12 +9,14 @@ export default class App extends Component {
     this.state = {
       name: '',
       Scene: UserSignin,
+      alcohol:0
     
 
 
     }
     this.changeName = this.changeName.bind(this);
     this.changeScene = this.changeScene.bind(this);
+    this.addAlcohol = this.addAlcohol.bind(this);
 
   }
 
@@ -28,6 +29,12 @@ export default class App extends Component {
     this.setState({ Scene });
   }
 
+  addAlcohol(alcohol) {
+    alcohol = Math.max(this.state.alcohol + alcohol, 0);
+
+
+    }
+
 
   render() {
     const { name , Scene} = this.state;
@@ -39,6 +46,7 @@ export default class App extends Component {
           name={name}
           changeName={this.changeName}
           changeScene={this.changeScene}
+          addAlcohol={this.addAlcohol}
         />
 
 
