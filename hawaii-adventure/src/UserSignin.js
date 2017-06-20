@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ChangeSceneButton from './ChangeSceneButton';
 import GameIntro from './GameIntro';
-// import Image from './images/welcome.jpg';
+
 
 
 function UserSignin({name, scene, changeScene, changeName}) {
