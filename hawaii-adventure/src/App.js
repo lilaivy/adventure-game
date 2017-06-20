@@ -9,7 +9,7 @@ export default class App extends Component {
     this.state = {
       name: '',
       Scene: UserSignin,
-      alcohol:0
+      // alcohol:0
     
 
 

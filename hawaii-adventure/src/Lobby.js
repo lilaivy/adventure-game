@@ -11,9 +11,6 @@ export default function Lobby({changeScene, Scene, name}) {
                 Scene={Drunk} 
                 name={name}
                 buttonMessage="Go To The Bar"/>
-              
-                    Go to Pool
-               
             </div>
         );
     }
